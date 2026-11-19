@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="deck_page" name="QC Flight Deck">&lt;!DOCTYPE html&gt;
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>QC Flight Deck</title>
+        <link rel="stylesheet" t-attf-href="/eas_qc_flight_deck/static/src/css/deck.css?v=#{asset_version}"/>
+    </head>
+    <body>
+        <t t-if="can_read">
+            <div id="deck"
+                 t-att-data-uid="uid"
+                 t-att-data-user="user_name"
+                 t-att-data-company="company_name"/>
+            <script t-attf-src="/eas_qc_flight_deck/static/src/js/deck.js?v=#{asset_version}"/>
+        </t>
+        <t t-else="">
+            <div class="fd-denied">
+                <h1>ACCESS DENIED</h1>
+                <p>Your user has no access to Quality Alerts. Ask an administrator for the Quality User role.</p>
+                <a href="/web">Return to Odoo</a>
+            </div>
+        </t>
+    </body>
+</html>
+    </template>
+</odoo>

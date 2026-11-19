@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_qc_flight_deck" model="ir.actions.act_url">
+        <field name="name">QC Flight Deck</field>
+        <field name="url">/qc-deck</field>
+        <field name="target">self</field>
+    </record>
+
+    <!-- Sequence kept high so the Quality app keeps its standard landing action. -->
+    <menuitem id="menu_qc_flight_deck"
+              name="Flight Deck"
+              parent="quality_control.menu_quality_root"
+              action="action_qc_flight_deck"
+              sequence="99"
+              groups="quality.group_quality_user"/>
+</odoo>
